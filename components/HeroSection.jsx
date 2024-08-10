@@ -1,0 +1,66 @@
+'use client'
+
+import { Button } from "./ui/button"
+import {TbArrowUpRight} from "react-icons/tb"
+import Image from "next/image"
+import { desVariants, tagVariants, titleVariants } from "@/utils/animation"
+import { motion } from "framer-motion"
+
+
+const HeroSection = () => {
+  return (
+    <div className='container py-12 xl:py-24 h-[auto] text-center lg:py-0 lg:text-left lg:flex lg:justify-between'>
+        {/* left section  */}
+        <div className='lg:w-1/2 xl:py-14 lg:py-8'>
+                <motion.p
+                initial="offscreen"
+                whileInView={"onscreen"}
+                variants={titleVariants}
+                className='tracking-widest uppercase'>
+                    Offer for the best Interior
+                </motion.p>
+            <motion.h1 
+                initial="offscreen"
+                whileInView={"onscreen"}
+                variants={desVariants}
+                className='h1'>
+                make Your Home a <br /> piece of art 
+            </motion.h1>
+
+            <motion.p 
+                initial="offscreen"
+                whileInView={"onscreen"}
+                variants={tagVariants}
+                className='pb-6 text-muted-foreground xl:pb-10'>
+                change your view with the best interior design. we provide the best interior for your home.
+                Make every moment beautiful with the best interior design. change your view with the best interior design.
+                We provide the best interior design for your Home. make every moment beautiful with the best interior design. 
+            </motion.p>
+
+            <motion.div
+                initial="offscreen"
+                whileInView={"onscreen"}
+                variants={tagVariants}
+            >
+            <Button className= "inline-flex items-center px-8 py-3 text-white rounded-full shadow-lg hover:bg-gray-800 hover:ring-gray-500 ring-offset-2">
+                Book Now <TbArrowUpRight className="w-5 h-5 ml-2" />
+            </Button>
+            </motion.div>
+            
+        </div>
+
+        {/* right section  */}
+        <div className='w-1/2'>
+            <Image
+            src="/image/gallery1.jpg"
+            width={800}
+            height={500}
+            alt=""
+            className="absolute right-20 xl:h-[448px] xl:w-[700px] lg:h-[344px] lg:w-[500px] hidden lg:block"
+            />
+        </div>
+    </div>
+  )
+}
+
+export default HeroSection
